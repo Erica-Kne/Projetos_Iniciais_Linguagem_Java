@@ -11,6 +11,6 @@ Conceitos aprendidos/praticados
 * Construtores
 * Métodos (inclusive com retorno void)
 * Getters e Setters (opcional)
-* Estruturas de controle: if, switch, while e do-while
+* Estruturas de controle: if, switch e do-while
 * Entrada de dados com Scanner
-* rganização em package
+* Organização em package
