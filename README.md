@@ -3,6 +3,7 @@
 Este repositório contém projetos desenvolvidos em Java com foco no aprendizado de orientação a objetos (POO).
 
 📌 Informações importantes
+
 IDE utilizada: Eclipse
 
 Versão do Java: 17.0.14
