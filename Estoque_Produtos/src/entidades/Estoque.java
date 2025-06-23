@@ -8,6 +8,7 @@ public class Estoque {
 	Scanner sc = new Scanner(System.in);
 	private List<Produto> estoque = new ArrayList<>();
 	
+	
 	public void cadastrarProduto() {
 		
 		System.out.print("Nome do produto: ");
@@ -36,5 +37,19 @@ public class Estoque {
 		}
 		sc.close();
 	};
-
+	
+	public void listarProdutos() {
+		for(Produto produto : estoque) {
+			System.out.println(produto);
+		};
+	};
+	
+	public Produto buscarProduto(String nome) {
+		for(Produto produto : estoque) {
+			if(produto.getNome().equalsIgnoreCase(nome)) {
+			return produto;
+			}
+		} return null;
+		}
 }
+		

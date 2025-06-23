@@ -42,6 +42,7 @@ public class Produto {
 		this.preco = preco;
 	};
 	
+	@Override
 	public String toString() {
 		return String.format("NOME: %s%nPRECO: %.2f%nQUANTIDADE: %d%n", nome, preco, quantidade);
 	};
