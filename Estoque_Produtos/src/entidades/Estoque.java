@@ -15,7 +15,7 @@ public class Estoque {
 		String nome = sc.nextLine().trim();
 		System.out.print("Quantidade: ");
 		int quantidade = sc.nextInt();
-		System.out.print("Preco: R$ ");
+		System.out.print("Preço: R$ ");
 		double preco = sc.nextDouble();
 		if(!nome.isEmpty() && quantidade >= 0 && preco > 0.0) {
 			
@@ -24,15 +24,15 @@ public class Estoque {
 			System.out.println("Produto cadastrado.");
 			
 		} else {
-			System.out.println("Nao foi possivel cadastrar o produto:");
+			System.out.println("Não foi possível cadastrar o produto:");
 			if(nome.isEmpty()) {
-				System.out.println("Nome invalido.");	
+				System.out.println("Nome inválido.");	
 			};
 			if( quantidade < 0) {
-				System.out.println("Quantidade invalida.");
+				System.out.println("Quantidade inválida.");
 			};
 			if( preco <= 0.0) {
-				System.out.println("Preco invalido.");
+				System.out.println("Preço inválido.");
 			}
 		}
 		sc.close();
@@ -51,5 +51,52 @@ public class Estoque {
 			}
 		} return null;
 		}
-}
+	public void removerProduto (String nome) {
+		boolean remover = estoque.removeIf(produto -> produto.getNome().equalsIgnoreCase(nome));
+		if(remover) {
+			System.out.print(nome + " removido do estoque.");	
+		} else {
+			System.out.print(nome + " não encontrado no estoque");
+		}
+		}
+	
+	public void adicionarQuantidade(String nome, int quantidade) {
+		boolean encontrado = false;
+		for(Produto produto : estoque){
+			if (produto.getNome().equalsIgnoreCase(nome)) {
+				if(quantidade > 0){
+					produto.setQuantidade(produto.getQuantidade() + quantidade);
+					System.out.println("Quantidade adicionada com sucesso");
+					encontrado = true;
+					break;
+					} else {
+						System.out.println("Valor inválido.");
+						}
+				}
+			} 
+		if(!encontrado) {
+			System.out.println("Produto não encontrado.");
+			}
+		}
+	
+	public void removerQuantidade(String nome, int quantidade) {
+		boolean encontrado = false;
+		for(Produto produto : estoque) {
+			if(produto.getNome().equalsIgnoreCase(nome)) {
+				if(quantidade > 0 && quantidade <= produto.getQuantidade()) {
+					produto.setQuantidade( produto.getQuantidade() - quantidade);
+					System.out.println("Quantidade removida com sucesso.");
+					} else {
+						System.out.println("Valor inválido. A quantidade deve ser maior que zero e menor ou igual ao estoque.");
+						}
+				encontrado = true;
+				break;
+				}
+			}
+		if(!encontrado) {
+			System.out.println("Produto não encontrado.");
+			}
+		}
+	}
+
 		
