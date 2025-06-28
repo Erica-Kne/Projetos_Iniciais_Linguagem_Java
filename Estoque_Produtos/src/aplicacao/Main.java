@@ -58,6 +58,9 @@ public class Main {
 			case 7:
 				estoque.valorTotalEstoque();
 				break;
+			default:
+				System.out.print("Opção inválida.");
+				break;	
 			}
 			
 		} while (opcao != 0);
