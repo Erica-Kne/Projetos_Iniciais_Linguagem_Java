@@ -19,4 +19,4 @@ Funcionalidades do sistema
 
 * Validação básica dos dados inseridos
 
-  Desenvolvido por: Érica Knevitz
+Desenvolvido por: Érica Knevitz
