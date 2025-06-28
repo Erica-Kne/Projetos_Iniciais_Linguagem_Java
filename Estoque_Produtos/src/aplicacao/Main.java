@@ -59,7 +59,7 @@ public class Main {
 				estoque.valorTotalEstoque();
 				break;
 			default:
-				System.out.print("Opção inválida.");
+				System.out.println("Opção inválida. Tente novamente.");
 				break;	
 			}
 			
