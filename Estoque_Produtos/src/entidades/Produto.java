@@ -42,9 +42,13 @@ public class Produto {
 		this.preco = preco;
 	};
 	
+	public double getValorTotal(){
+		return valorTotal = quantidade * preco;
+	}
+	
 	@Override
 	public String toString() {
-		return String.format("NOME: %s%nPRECO: %.2f%nQUANTIDADE: %d%n", nome, preco, quantidade);
+		return String.format("NOME: %s%nPREÇO:R$ %.2f%nQUANTIDADE: %d%n", nome, preco, quantidade);
 	};
 	
 	public void adicionarAoEstoque(int quantidade) {
@@ -55,8 +59,6 @@ public class Produto {
 		this.quantidade -= quantidade;
 	}
 	
-	public double getValorTotal() {
-		return quantidade * preco;
-	};
+
 	
 }

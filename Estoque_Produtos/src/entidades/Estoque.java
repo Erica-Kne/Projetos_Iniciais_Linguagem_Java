@@ -17,6 +17,7 @@ public class Estoque {
 		int quantidade = sc.nextInt();
 		System.out.print("Preço: R$ ");
 		double preco = sc.nextDouble();
+		sc.nextLine();
 		if(!nome.isEmpty() && quantidade >= 0 && preco > 0.0) {
 			
 			Produto produto = new Produto (nome, quantidade, preco);
@@ -35,7 +36,6 @@ public class Estoque {
 				System.out.println("Preço inválido.");
 			}
 		}
-		sc.close();
 	};
 	
 	public void listarProdutos() {
@@ -54,9 +54,9 @@ public class Estoque {
 	public void removerProduto (String nome) {
 		boolean remover = estoque.removeIf(produto -> produto.getNome().equalsIgnoreCase(nome));
 		if(remover) {
-			System.out.print(nome + " removido do estoque.");	
+			System.out.print(nome + " removido do estoque.%n");	
 		} else {
-			System.out.print(nome + " não encontrado no estoque");
+			System.out.print(nome + " não encontrado no estoque.%n");
 		}
 		}
 	
@@ -71,6 +71,7 @@ public class Estoque {
 					break;
 					} else {
 						System.out.println("Valor inválido.");
+						encontrado = true;
 						}
 				}
 			} 
@@ -97,6 +98,14 @@ public class Estoque {
 			System.out.println("Produto não encontrado.");
 			}
 		}
+	
+	public void valorTotalEstoque() {
+		double valorTotal = 0.0;
+		for(Produto produto : estoque) {
+			valorTotal += produto.getValorTotal();
+		}
+		System.out.printf("Valor total em estoque: R$ %.2f\n", valorTotal);
+	}
 	}
 
 		
