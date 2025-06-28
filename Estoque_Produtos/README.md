@@ -1,4 +1,5 @@
 Sistema de Gerenciamento de Estoque
+
 Um projeto em Java para cadastro, consulta e gerenciamento de produtos em estoque. Desenvolvido com foco em orientação a objetos, boas práticas e organização de código.
 
 Funcionalidades do sistema
