@@ -15,8 +15,14 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public void atualizarDados() {
-        
+    @Override
+
+    public String toString() {
+        return "Nome: " + nome
+         + "\nCPF: " + cpf +
+         "\nE-mail: " + email
+        + "Telefone: " + telefone;
     }
+    
 
 }
