@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,10 +30,34 @@ public class ProdutoDaoJDBC implements ProdutoDao{
 		return produto;
 	}
 	@Override
-	public void insert() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void insert(Produto produto) {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("INSERT INTO estoque"
+					+ " (nome, descricao, preco, quantidade)"
+					+ "VALUES (?,?,?,?)", Statement.RETURN_GENERATED_KEYS);		
+			st.setString(1, produto.getNome());
+			st.setString(2, produto.getDescricao());
+			st.setDouble(3, produto.getPreco());
+			st.setInt(4, produto.getQuantidade());
+			
+			int linhasAlteradas = st.executeUpdate();
+			
+			if(linhasAlteradas > 0) {
+				ResultSet rs = st.getGeneratedKeys();
+				if(rs.next()) {
+					int id = rs.getInt(1);
+					produto.setId(id);
+				} DB.closeResultSet(rs);
+			}else{
+				throw new DbException("ERRO: produto não adicionado.");
+			}
+		}catch(SQLException e) {
+			throw new DbException(e.getMessage());
+		}finally {
+			DB.closeStatement(st);
+			}
+		}
 
 	@Override
 	public Produto findById(Integer id) {
@@ -79,13 +104,44 @@ public class ProdutoDaoJDBC implements ProdutoDao{
 
 	@Override
 	public void update(Produto produto) {
-		// TODO Auto-generated method stub
-		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("UPDATE estoque"
+					+ " SET nome = ? , descricao = ? , preco = ? , quantidade = ?"
+					+ "WHERE id = ?");		
+			st.setString(1, produto.getNome());
+			st.setString(2, produto.getDescricao());
+			st.setDouble(3, produto.getPreco());
+			st.setInt(4, produto.getQuantidade());
+			st.setInt(5, produto.getId());
+			st.executeUpdate();
+			} catch(SQLException e) {
+				throw new DbException(e.getMessage());
+			}finally {
+				DB.closeStatement(st);
+		}
 	}
+		
+		
+	
 
 	@Override
 	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("DELETE FROM estoque WHERE id = ?");
+			st.setInt(1, id);
+			int linhasAlteradas = st.executeUpdate();
+			if(linhasAlteradas > 0) {
+				System.out.println("Produto deletado com sucesso.");
+			}else{
+				throw new DbException("ERRO: o produto não existe.");
+			}
+		} catch(SQLException e) {
+			throw new DbException(e.getLocalizedMessage());
+		} finally {
+			DB.closeStatement(st);
+		}
 		
 	}
 
