@@ -76,8 +76,8 @@ public class ProdutoDaoJDBC implements ProdutoDao{
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());
 		} finally {
-			DB.closeStatement(st);
 			DB.closeResultSet(rs);
+			DB.closeStatement(st);
 		}
 		
 	}
@@ -90,7 +90,7 @@ public class ProdutoDaoJDBC implements ProdutoDao{
 		try {
 			st = conn.prepareStatement("SELECT * FROM produto");
 			rs = st.executeQuery();
-			if(rs.next()) {
+			while(rs.next()) {
 				Produto produto = instanciarProduto(rs);
 				list.add(produto);
 			}
@@ -106,9 +106,9 @@ public class ProdutoDaoJDBC implements ProdutoDao{
 	public void update(Produto produto) {
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("UPDATE estoque"
+			st = conn.prepareStatement("UPDATE produto"
 					+ " SET nome = ? , descricao = ? , preco = ? , quantidade = ?"
-					+ "WHERE id = ?");		
+					+ " WHERE id = ?");		
 			st.setString(1, produto.getNome());
 			st.setString(2, produto.getDescricao());
 			st.setDouble(3, produto.getPreco());
