@@ -4,7 +4,7 @@ Aplicação desenvolvida em Java com integração ao MySQL, utilizando JDBC para
 
 O projeto foi desenvolvido com o objetivo de praticar conceitos de Programação Orientada a Objetos, integração com banco de dados e operações CRUD.
 
-**Tecnologias utilizadas**
+**🚀 Tecnologias utilizadas**
 
 Java 17
 
@@ -36,7 +36,8 @@ Validação de dados
 
 Tratamento de exceções
 
-Conceitos praticados
+
+**📗 Conceitos praticados**
 
 Programação Orientada a Objetos (POO)
 
@@ -60,11 +61,11 @@ Regras de negócio
 
 Integração entre aplicação Java e banco de dados MySQL
 
-**Estrutura do projeto**
+**🧱 Estrutura do projeto**
 
 O projeto utiliza o padrão DAO para separar a lógica de acesso ao banco de dados das demais partes da aplicação.
 
-**Banco de dados**
+**🎲 Banco de dados**
 
 O sistema utiliza o MySQL para armazenar os produtos cadastrados.
 
