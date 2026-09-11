@@ -6,64 +6,71 @@ O projeto foi desenvolvido com o objetivo de praticar conceitos de Programação
 
 **🚀 Tecnologias utilizadas**
 
-Java 17
+- Java 17
 
-MySQL
+- MySQL
 
-JDBC
+- JDBC
 
-Git/GitHub
+**🔧 Ferramentas Utilizadas**
 
-Eclipse
+- Git/GitHub
+
+- Eclipse
 
 **⚙️ Funcionalidades**
 
-Cadastro de produtos
+- Cadastro de produtos
 
-Listagem de produtos
+- Listagem de produtos
 
-Busca de produto por ID
+- Busca de produto por ID
 
-Atualização de produtos
+- Atualização de produtos
 
-Exclusão de produtos
+- Exclusão de produtos
 
-Entrada de estoque
+- Entrada de estoque
 
-Saída de estoque
+- Saída de estoque
 
-Validação de dados
+- Validação de dados
 
-Tratamento de exceções
+- Tratamento de exceções
 
 
 **📗 Conceitos praticados**
 
-Programação Orientada a Objetos (POO)
+- Programação Orientada a Objetos (POO)
 
-Encapsulamento
+- Encapsulamento
 
-Classes e métodos
+- Classes e métodos
 
-Collections
+- Collections
 
-JDBC
+- JDBC
 
-CRUD
+- CRUD
 
-Padrão DAO
+- Padrão DAO
 
-PreparedStatement
+- PreparedStatement
 
-Tratamento de exceções
+- Tratamento de exceções
 
-Regras de negócio
+- Regras de negócio
 
-Integração entre aplicação Java e banco de dados MySQL
+- Integração entre aplicação Java e banco de dados MySQL
 
 **🧱 Estrutura do projeto**
 
 O projeto utiliza o padrão DAO para separar a lógica de acesso ao banco de dados das demais partes da aplicação.
+
+
+<img width="346" height="397" alt="arvore do projeto(1)" src="https://github.com/user-attachments/assets/c66ab67d-e907-4693-a39d-32af1ef1e4c5" />
+
+
 
 **🎲 Banco de dados**
 
